@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P30 Agent Financial OS - Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="logo">P30 FINANCIAL OS</div>
+        <div class="system-status">
+            <div class="status-item"><span class="indicator"></span> CLOB-NETWORK: ONLINE</div>
+            <div class="status-item"><span class="indicator"></span> STRATEGY-ENGINE: ACTIVE</div>
+            <div class="status-item"><span class="indicator" style="background: var(--accent-blue); box-shadow: 0 0 10px var(--accent-blue);"></span> AGENT-08: RUNNING</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Left: Capital & Agents -->
+        <div class="left-col">
+            <div class="card capital-display">
+                <div class="card-title">Total Equity <span class="live-dot">● LIVE</span></div>
+                <div class="amount">$1,042.85</div>
+                <div class="pnl">+4.28% (+$42.85) 今日</div>
+            </div>
+
+            <div class="card agent-list">
+                <div class="card-title">Sub-Agents Status</div>
+                
+                <div class="agent-item">
+                    <div class="agent-header">
+                        <span class="agent-name">Intelligence-Agent</span>
+                        <span class="agent-status">MONITORING</span>
+                    </div>
+                    <div class="agent-task">正在扫描美国大选相关舆情...</div>
+                </div>
+
+                <div class="agent-item">
+                    <div class="agent-header">
+                        <span class="agent-name">Calculation-Agent</span>
+                        <span class="agent-status">CALCULATING</span>
+                    </div>
+                    <div class="agent-task">计算 NegRisk 市场逻辑偏离度...</div>
+                </div>
+
+                <div class="agent-item">
+                    <div class="agent-header">
+                        <span class="agent-name">Execution-Agent</span>
+                        <span class="agent-status">WAITING</span>
+                    </div>
+                    <div class="agent-task">待命：单笔套利阈值 > 0.5%</div>
+                </div>
+
+                <div class="agent-item">
+                    <div class="agent-header">
+                        <span class="agent-name">Shadow-Agent</span>
+                        <span class="agent-status">TRACKING</span>
+                    </div>
+                    <div class="agent-task">同步追踪 RN1 交易行为...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Center: Radar & Terminal -->
+        <div class="center-col">
+            <div class="card arb-radar">
+                <div class="card-title">Logical Arbitrage Radar (NegRisk Markets)</div>
+                <div class="radar-grid" id="radar-grid">
+                    <!-- Market Cards will be injected by JS -->
+                    <div class="market-card">
+                        <div class="market-name">Which party wins the White House?</div>
+                        <div class="market-stats">
+                            <span>Arb Opp:</span>
+                            <span class="arb-pct">0.82%</span>
+                        </div>
+                    </div>
+                    <div class="market-card">
+                        <div class="market-name">Pennsylvania Election Result</div>
+                        <div class="market-stats">
+                            <span>Arb Opp:</span>
+                            <span class="arb-pct">1.25%</span>
+                        </div>
+                    </div>
+                    <div class="market-card" style="border-color: var(--accent-green); box-shadow: inset 0 0 10px rgba(0, 255, 170, 0.1);">
+                        <div class="market-name">Georgia Election Result</div>
+                        <div class="market-stats">
+                            <span>Arb Opp:</span>
+                            <span class="arb-pct">2.14%</span>
+                        </div>
+                    </div>
+                    <div class="market-card">
+                        <div class="market-name">Arizona Election Result</div>
+                        <div class="market-stats">
+                            <span>Arb Opp:</span>
+                            <span class="arb-pct">0.45%</span>
+                        </div>
+                    </div>
+                    <div class="market-card">
+                        <div class="market-name">Wisconsin Election Result</div>
+                        <div class="market-stats">
+                            <span>Arb Opp:</span>
+                            <span class="arb-pct">0.12%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card terminal">
+                <div class="card-title">System Console</div>
+                <div id="log-container">
+                    <div class="log-line"><span class="log-time">[10:45:01]</span> <span class="log-msg-info">System initialized.</span> Connecting to Polygon RPC...</div>
+                    <div class="log-line"><span class="log-time">[10:45:03]</span> <span class="log-msg-success">Connected.</span> Wallet address: 0x...85f1</div>
+                    <div class="log-line"><span class="log-time">[10:45:10]</span> <span class="log-msg-info">Scanning 142 NegRisk markets...</span></div>
+                    <div class="log-line"><span class="log-time">[10:46:12]</span> <span class="log-msg-warn">High volatility detected in PA Election market.</span></div>
+                    <div class="log-line"><span class="log-time">[10:47:05]</span> <span class="log-msg-success">Shadow-Bot: RN1 executed BUY $85.5 on "Trump wins GA"</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Whale Tracker -->
+        <div class="right-col">
+            <div class="card whale-tracker">
+                <div class="card-title">Shadow Whale Activity (RN1 / swisstony)</div>
+                <div id="whale-list">
+                    <div class="whale-item">
+                        <div class="whale-avatar">RN</div>
+                        <div class="whale-info">
+                            <div class="whale-name">RN1</div>
+                            <div class="whale-action">Bought <span style="color:var(--accent-green)">YES</span> on "US CPI > 3.1%"</div>
+                            <div class="whale-time">2 mins ago · $412.00</div>
+                        </div>
+                    </div>
+                    <div class="whale-item">
+                        <div class="whale-avatar" style="background: linear-gradient(45deg, #4c51bf, #6b46c1);">SW</div>
+                        <div class="whale-info">
+                            <div class="whale-name">swisstony</div>
+                            <div class="whale-action">Sold <span style="color:var(--accent-orange)">NO</span> on "ETH ETF Approval"</div>
+                            <div class="whale-time">5 mins ago · $1,250.00</div>
+                        </div>
+                    </div>
+                    <div class="whale-item">
+                        <div class="whale-avatar">RN</div>
+                        <div class="whale-info">
+                            <div class="whale-name">RN1</div>
+                            <div class="whale-action">Bought <span style="color:var(--accent-green)">NO</span> on "BTC > $100k (May)"</div>
+                            <div class="whale-time">8 mins ago · $125.50</div>
+                        </div>
+                    </div>
+                    <div class="whale-item">
+                        <div class="whale-avatar">KC</div>
+                        <div class="whale-info">
+                            <div class="whale-name">kch123</div>
+                            <div class="whale-action">Position Build: "GOP Wins Senate"</div>
+                            <div class="whale-time">15 mins ago · $12,000.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card command-input" style="height: 100px; display: flex; flex-direction: column;">
+                <div class="card-title">Command Input</div>
+                <input type="text" placeholder="/track address --aggressive" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-main); padding: 8px; border-radius: 4px; outline: none; font-family: monospace;">
+            </div>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "pure-reason-os",
+	"account_id": "e12dd07e3951d3a5683b89fefd58085b",
+	"main": "entry.worker.ts",
+	"compatibility_date": "2024-11-01",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"assets": {
+		"directory": "./out",
+		"binding": "ASSETS"
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "pure-reason-db",
+			"database_id": "c27ed333-b30f-4543-be6d-0aa8bac9042e"
+		}
+	],
+	"kv_namespaces": [
+		{
+			"binding": "POOL_CACHE",
+			"id": "1f3e0c87171b4333b2ec93df4e1e5210"
+		}
+	],
+	"triggers": {
+		"crons": ["*/5 * * * *"]
+	},
+	"routes": [
+		{
+			"pattern": "tomesh.topoo.ai",
+			"custom_domain": true
+		}
+	],
+	"vars": {
+		"NEXT_PUBLIC_TOPOO_AUTH_URL": "https://auth.topoo.ai/api/auth",
+		"DEPLOY_ID": "Pure Reason v1.0.0-critique"
+	}
+}
