@@ -119,19 +119,32 @@ export default function DashboardPage() {
           </div>
 
           <div className="space-y-6">
-            <h3 className="text-[10px] font-mono font-bold text-zinc-900 uppercase tracking-[0.2em]">Kernel Output</h3>
-            <div className="bg-zinc-50 p-8 rounded-sm font-mono text-[11px] text-zinc-500 space-y-3 leading-relaxed">
-              <div className="flex gap-3">
-                <span className="text-blue-500">→</span>
-                <span>Subscribed: 0x4bFb...6075</span>
+            <h3 className="text-[10px] font-mono font-bold text-zinc-900 uppercase tracking-[0.2em] px-1 flex items-center gap-2">
+              <span className="size-1.5 rounded-full bg-blue-500 animate-pulse" />
+              System Integrity & Risk Audit
+            </h3>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-zinc-50 p-6 rounded-sm space-y-2">
+                <span className="text-[9px] font-mono font-bold text-zinc-400 uppercase tracking-widest">Logic Threshold</span>
+                <div className="text-lg font-mono font-bold text-zinc-900">0.72 <span className="text-[10px] text-zinc-400">σ</span></div>
+                <div className="h-1 w-full bg-zinc-200 rounded-full overflow-hidden">
+                  <div className="h-full w-[72%] bg-blue-500" />
+                </div>
               </div>
-              <div className="flex gap-3">
-                <span className="text-zinc-300">#</span>
-                <span>Whale.Shadow: Monitoring 12 targets</span>
+              <div className="bg-zinc-50 p-6 rounded-sm space-y-2">
+                <span className="text-[9px] font-mono font-bold text-zinc-400 uppercase tracking-widest">D1 Audit Sync</span>
+                <div className="text-lg font-mono font-bold text-green-600">ACTIVE</div>
+                <p className="text-[9px] text-zinc-400 font-mono italic">Last hash: 0x82...f91a</p>
               </div>
-              <div className="flex gap-3 text-blue-500 animate-pulse">
-                <span className="text-blue-200">#</span>
-                <span>Awaiting new events...</span>
+            </div>
+            <div className="bg-zinc-900 p-6 rounded-sm font-mono text-[10px] text-zinc-400 leading-relaxed">
+              <div className="flex gap-2 mb-2">
+                <span className="text-zinc-600">[SECURE]</span>
+                <span className="text-zinc-200">Circuit Breaker: ENGAGED</span>
+              </div>
+              <div className="flex gap-2">
+                <span className="text-zinc-600">[AUDIT]</span>
+                <span>Whale.Logic: Verified via toReason v1.0</span>
               </div>
             </div>
           </div>
