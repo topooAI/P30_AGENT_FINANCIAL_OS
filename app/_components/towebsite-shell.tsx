@@ -39,7 +39,7 @@ const sidebarSectionsTop: NavSection[] = [
     ],
   },
   {
-    label: "Pure Reason",
+    label: "toReason",
     items: [
       { href: "/logic-arb",     label: "Logic Arbitrage" },
       { href: "/whale-shadow",  label: "Whale Shadow" },

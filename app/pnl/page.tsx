@@ -30,8 +30,8 @@ export default function PnlPage() {
 
   return (
     <ToWebsiteShell 
-      title="PnL Analytics" 
-      subtitle="Pure Reason / Capital Efficiency Audit"
+      title="toReason PnL Analytics" 
+      subtitle="纯粹理性 / Capital Efficiency Audit"
       constrainMain={true}
     >
       <div className="flex flex-col gap-16 py-8">

@@ -46,8 +46,8 @@ export default function DashboardPage() {
 
   return (
     <ToWebsiteShell 
-      title="Pure Reason Terminal" 
-      subtitle="Critique of logical arbitrage v1.0.2"
+      title="toReason Terminal" 
+      subtitle="纯粹理性 / Autonomous Logic Engine v1.0.2"
       constrainMain={true} 
     >
       <div className="flex flex-col gap-12 bg-white min-h-screen pt-4">

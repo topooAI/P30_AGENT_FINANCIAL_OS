@@ -1,6 +1,6 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "pure-reason-os",
+	"name": "toreason-os",
 	"account_id": "e12dd07e3951d3a5683b89fefd58085b",
 	"main": "entry.worker.ts",
 	"compatibility_date": "2024-11-01",
@@ -29,12 +29,12 @@
 	},
 	"routes": [
 		{
-			"pattern": "tomesh.topoo.ai",
+			"pattern": "toreason.topoo.ai",
 			"custom_domain": true
 		}
 	],
 	"vars": {
 		"NEXT_PUBLIC_TOPOO_AUTH_URL": "https://auth.topoo.ai/api/auth",
-		"DEPLOY_ID": "Pure Reason v1.0.0-critique"
+		"DEPLOY_ID": "toReason v1.0.0"
 	}
 }
