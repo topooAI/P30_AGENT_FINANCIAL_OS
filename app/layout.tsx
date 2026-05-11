@@ -3,8 +3,10 @@ import { Providers } from "./providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ToMesh Dashboard | Topoo AI",
-  description: "Autonomous Compute Mesh Interface",
+  title: "toReason Terminal",
+  description: "Pure Reason / Financial OS",
+  manifest: "/manifest.json",
+  themeColor: "#000000",
 };
 
 export default function RootLayout({
